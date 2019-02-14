@@ -1,0 +1,22 @@
+[listener]
+interfaces=["eth0"]
+type="raw"
+
+[channel.console]
+type="console"
+# TDOD add and test channel log to logging/file?
+#[channel.]
+#type=""
+
+
+[channel.file]
+type="file"
+filename="/var/log/honeytrap/honeytrap.log"
+
+#[[filter]]
+#channel=["raven"]
+
+[[logging]]
+output = "stdout"
+level = "debug"
+# TDOD Add services SSH-... and ...
