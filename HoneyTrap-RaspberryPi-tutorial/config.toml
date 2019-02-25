@@ -1,25 +1,29 @@
-# TODO Add listener/services/etc to config and check if everything works
-# TODO Add to the tutorial 
-[listener]
-interfaces=["eth0"]
-type="..."
+[listener] 
+type="socket"
+
+[service.ssh-simulator]
+type="ssh-simulator"
+credentials=["root:root", "root:password"]
+
+[[port]]
+ports=["tcp/8022"]
+services=["ssh-simulator"]
 
 [channel.console]
 type="console"
 
-[channel....]
-type="..."
-token="..."
-server="..."
+[[filter]]
+channel=["console"]
 
-
-[channel.file]
+[channel.tofile]
 type="file"
-filename="/var/log/honeytrap/honeytrap.log"
+filename="/var/log/honeytrap/action.log"
+maxsize="536870912"
+timeout="5s"
 
 [[filter]]
-channel=["..."]
+channel=["tofile"]
 
 [[logging]]
-output = "stdout"
-level = "debug"
+output="stdout"
+level="debug"
