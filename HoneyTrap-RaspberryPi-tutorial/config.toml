@@ -1,4 +1,4 @@
-[listener] 
+[listener]
 type="socket"
 
 [service.ssh-simulator]
@@ -8,6 +8,14 @@ credentials=["root:root", "root:password"]
 [[port]]
 ports=["tcp/8022"]
 services=["ssh-simulator"]
+
+[service.telnet]
+type="telnet"
+prompt=">"
+
+[[port]]
+ports=["tcp/23"]
+services=["telnet"]
 
 [channel.console]
 type="console"
