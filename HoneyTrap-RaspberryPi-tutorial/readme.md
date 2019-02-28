@@ -1,2 +1,2 @@
 ## HoneyTrap RaspberryPi Tutorial files
-These files belong to the HoneyTrap RaspberryPi tutorial that can be found [here](honeytrap.io).
+These files belong to the HoneyTrap RaspberryPi tutorial that can be found [here](http://honeytrap.io).
